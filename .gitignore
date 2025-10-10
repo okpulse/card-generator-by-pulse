@@ -1,0 +1,28 @@
+# ОС 
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
+*.tmp
+*.swp
+
+# Параметры/ключи 
+.env
+.env.local
+*.env
+
+# Сборки / кэши 
+dist/
+build/
+.cache/
+.parcel-cache/
+coverage/
+
+# Пакеты 
+node_modules/
+
+# Архивы/артефакты
+*.zip
+*.tar
+*.tar.gz

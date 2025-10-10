@@ -1,0 +1,138 @@
+*{box-sizing:border-box}
+html,body{height:100%} body{margin:0;background:#0c121d;color:#e7eef6;font:14px/1.5 Inter,system-ui,Arial}
+.wrap{max-width:1240px;margin:16px auto;padding:0 16px}
+.top{display:flex;justify-content:flex-end;margin-bottom:12px}
+.badge{background:#131a27;color:#a9b3c5;border:1px solid #222a3a;padding:8px 12px;border-radius:999px;font-weight:700;font-size:12px}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 460px;gap:18px;align-items:start}
+.stack{display:grid;gap:12px}
+.panel{background:#0d1422;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:12px}
+.panel h3{margin:0 0 8px;font-size:13px;color:#a9b3c5}
+.controls .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.controls .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.controls .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.controls label{display:flex;flex-direction:column;gap:6px;margin-bottom:8px}
+.controls input[type="text"],select{background:#0d1422;border:1px solid #263248;border-radius:8px;padding:8px 10px;color:#e7eef6}
+.controls input[type="range"]{width:100%}
+.colorsRow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.colorsRow label{display:flex;align-items:center;gap:8px;background:#0c1524;border:1px solid #162033;border-radius:10px;padding:8px}
+.colorsRow input[type="color"]{width:36px;height:28px;padding:0;border:none;background:transparent}
+.btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+button{border:1px solid #263248;background:#0f1728;color:#e7eef6;padding:10px 12px;border-radius:10px;font-weight:700;cursor:pointer}
+button:hover{background:#131d33}
+
+/* Canvas */
+.canvas{--bg1:#233654;--bg2:#2b4060;--bg3:#0a121f;--t:#e8eef8;--m:#aab7c8;--b:#cfd7e6;--a1:#62d2ff;--a2:#4864f0;
+  position:relative;width:100%;aspect-ratio:1200/630;overflow:hidden;isolation:isolate;
+  background:linear-gradient(180deg,var(--bg1),var(--bg2) 50%,var(--bg3))}
+#plate{position:absolute;inset:0;z-index:1}
+#texts{position:absolute;inset:0;padding:40px 44px;z-index:10;transform-origin:top left}
+#iconWrap{position:absolute;inset:0;z-index:6;display:grid;place-items:center;pointer-events:none;overflow:visible;mix-blend-mode:normal}
+#iconImg{max-width:80%;max-height:80%;opacity:.25;mix-blend-mode:normal;display:none}
+.pill{display:inline-flex;align-items:center;gap:8px;height:26px;padding:0 12px;border-radius:999px;background:rgba(255,255,255,.06);color:var(--m);font-size:14px;line-height:1;width:max-content}
+.pill #dot{width:8px;height:8px;border-radius:50%;background:var(--a1);display:inline-block;align-self:center}
+.textBlock{max-width:60ch}
+#titleOut{margin:12px 0 12px;font-weight:800;font-size:36px;line-height:1.2;color:var(--t);white-space:normal;word-break:break-word;overflow-wrap:anywhere;max-width:60ch}
+#descOut{margin:0 0 16px;color:var(--m);font-size:16px;white-space:normal;word-break:break-word;overflow-wrap:anywhere;max-width:60ch}
+#brandOut{color:var(--b);font-size:13px}
+
+
+/* Width constraints: keep title wider than description */
+.textBlock{--tw:60ch}
+#titleOut{max-width:var(--tw)}
+#descOut{max-width:calc(var(--tw) * 0.85)}
+
+.pill span + span{display:flex;align-items:center}
+
+
+/* Micro‑alignment for slug pill */
+.pill{align-items:center;line-height:1}
+.pill #dot{transform:translateY(1px)}           /* nudge dot down by 1px */
+.pill span + span{display:flex;align-items:center;line-height:1}
+
+.textBlock{box-sizing:border-box}
+
+.textBlock{box-sizing:border-box}
+
+
+/* ===== Export state (safe two-pass): hide only icon; keep texts visible ===== */
+.exporting * { transition: none !important; animation: none !important; }
+.exporting #iconOut,
+.exporting #iconCanvas,
+.exporting .icon-layer { opacity: 0 !important; }
+
+
+/* ===== Slug pill: одно и то же центрирование в UI и во время экспорта ===== */
+#texts > .pill{
+  display:inline-flex;
+  align-items:center;
+  justify-content:flex-start;
+  padding-top:6px;
+  padding-bottom:6px;
+  border-radius:9999px;
+  line-height:1;
+}
+#texts > .pill #dot{
+  width:12px;
+  height:12px;
+  border-radius:9999px;
+  margin-right:6px;
+  align-self:center;
+  flex:0 0 auto;
+}
+#texts > .pill #slugOut{
+  display:inline-block;
+  line-height:1;
+  vertical-align:middle;
+  text-align:left;
+}
+.exporting #texts > .pill{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:flex-start !important;
+  padding-top:6px !important;
+  padding-bottom:6px !important;
+  line-height:1 !important;
+}
+.exporting #texts > .pill #dot{
+  align-self:center !important;
+}
+.exporting #texts > .pill #slugOut{
+  display:inline-block !important;
+  line-height:1 !important;
+  vertical-align:middle !important;
+  text-align:left !important;
+}
+
+
+/* v6.3.9 — Slug: compact dot↔text spacing & neutral vertical paddings */
+#texts > .pill{ gap:4px !important; padding-top:0 !important; padding-bottom:0 !important; }
+#texts > .pill #dot{ margin-right:0 !important; }
+#texts > .pill #slugOut{ line-height:1 !important; }
+
+/* export should mirror UI */
+.exporting #texts > .pill{ gap:4px !important; padding-top:0 !important; padding-bottom:0 !important; }
+.exporting #texts > .pill #dot{ margin-right:0 !important; }
+.exporting #texts > .pill #slugOut{ line-height:1 !important; }
+
+
+/* v6.3.9 — Title wrap + Brand edge alignment */
+#titleOut{
+  white-space: normal !important;
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+  line-height: 1.1;
+}
+/* чуть подравниваем бренд под левую кромку заголовка/описания */
+#brandOut{ padding-left: 2px !important; vertical-align: middle; }
+.exporting #brandOut{ padding-left: 2px !important; vertical-align: middle !important; }
+
+
+/* v6.3.9 — Export-only: center slug text box to match dot center */
+.exporting #texts > .pill{
+  align-items: center !important;
+}
+.exporting #texts > .pill #slugOut{
+  display: flex !important;
+  align-items: center !important;   /* center glyph box vertically */
+  line-height: 1 !important;
+}
