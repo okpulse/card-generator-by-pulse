@@ -2,6 +2,7 @@
 
 [Русский](README.md) | [English](README.en.md) | [Українська](README.ua.md)
 
+Use online: https://okpulse.github.io/card-generator-by-pulse/  
 ---
 
 
@@ -92,5 +93,6 @@ If you’re into OSINT, check out my resources:
 If the project was helpful and you’d like me to add more features, you can support development:
 
 - [💎 Patreon](https://www.patreon.com/pulsepagemy)  
-- 💰 **USDT (TRC20):** `TMDLY3qRZN81b5xn9Z9Wg2y3Y6aeBpV5Z6`  
+- [💰 Monobank](https://send.monobank.ua/jar/U32Yc8ML3) 
 - [⭐ Become a channel member on YouTube](https://www.youtube.com/channel/UCojEUrPvEvkUXEU3QWwhCwg/join)
+- 💲 **USDT (TRC20):** `TMDLY3qRZN81b5xn9Z9Wg2y3Y6aeBpV5Z6` 

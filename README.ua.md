@@ -2,6 +2,7 @@
 
 [Русский](README.md) | [English](README.en.md) | [Українська](README.ua.md)
 
+Користуватись онлайн: https://okpulse.github.io/card-generator-by-pulse/  
 ---
 
 
@@ -92,5 +93,6 @@ cd card-generator-by-pulse
 Якщо проєкт виявився корисним і ви хочете, щоб я доробив ще якийсь функціонал, можна підтримати розробку:
 
 - [💎 Patreon](https://www.patreon.com/pulsepagemy)  
-- 💰 **USDT (TRC20):** `TMDLY3qRZN81b5xn9Z9Wg2y3Y6aeBpV5Z6`  
-- [⭐ Стати спонсором на YouTube](https://www.youtube.com/channel/UCojEUrPvEvkUXEU3QWwhCwg/join)
+- [💰 Monobank](https://send.monobank.ua/jar/U32Yc8ML3)  
+- [⭐ Стать спонсором на YouTube](https://www.youtube.com/channel/UCojEUrPvEvkUXEU3QWwhCwg/join)
+- 💲 **USDT (TRC20):** `TMDLY3qRZN81b5xn9Z9Wg2y3Y6aeBpV5Z6` 
