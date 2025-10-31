@@ -2,10 +2,11 @@
 
 [Русский](README.md) | [English](README.en.md) | [Українська](README.ua.md)
 
-Использовать онлайн: https://okpulse.github.io/card-generator-by-pulse/  
 ---
 
 **Card Generator by Pulse** — это инструмент, позволяющий быстро и просто создавать карточки или баннеры для сайта, блога или Telegram‑канала (ну или куда-то ещё).  
+
+▶️**Использовать онлайн:** https://okpulse.github.io/card-generator-by-pulse/  
 
 <img src="./assets/interface.png" alt="Interface" width="800" style="max-width:100%;">
 

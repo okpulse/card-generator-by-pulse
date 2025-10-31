@@ -2,9 +2,9 @@
 
 [Русский](README.md) | [English](README.en.md) | [Українська](README.ua.md)
 
-Користуватись онлайн: https://okpulse.github.io/card-generator-by-pulse/  
 ---
 
+▶️**Користуватись онлайн:** https://okpulse.github.io/card-generator-by-pulse/ 
 
 **Card Generator by Pulse** — це інструмент, який дозволяє швидко та просто створювати картки або банери для сайту, блогу чи Telegram‑каналу (або будь‑куди ще).
 

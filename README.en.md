@@ -2,11 +2,11 @@
 
 [Русский](README.md) | [English](README.en.md) | [Українська](README.ua.md)
 
-Use online: https://okpulse.github.io/card-generator-by-pulse/  
 ---
 
-
 **Card Generator by Pulse** is a tool that lets you quickly and easily create cards or banners for a website, blog, or a Telegram channel (or anywhere else).
+
+▶️**Use online:** https://okpulse.github.io/card-generator-by-pulse/  
 
 <img src="./assets/interface.png" alt="Interface" width="800" style="max-width:100%;">
 
