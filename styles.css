@@ -36,7 +36,7 @@ button:hover{background:#131d33}
 #brandOut{color:var(--b);font-size:13px}
 
 
-/* Width constraints: keep title wider than description */
+/* заголовок шире описания */
 .textBlock{--tw:60ch}
 #titleOut{max-width:var(--tw)}
 #descOut{max-width:calc(var(--tw) * 0.85)}
@@ -44,24 +44,19 @@ button:hover{background:#131d33}
 .pill span + span{display:flex;align-items:center}
 
 
-/* Micro‑alignment for slug pill */
 .pill{align-items:center;line-height:1}
-.pill #dot{transform:translateY(1px)}           /* nudge dot down by 1px */
+.pill #dot{transform:translateY(1px)}
 .pill span + span{display:flex;align-items:center;line-height:1}
 
 .textBlock{box-sizing:border-box}
 
 .textBlock{box-sizing:border-box}
 
-
-/* ===== Export state (safe two-pass): hide only icon; keep texts visible ===== */
 .exporting * { transition: none !important; animation: none !important; }
 .exporting #iconOut,
 .exporting #iconCanvas,
 .exporting .icon-layer { opacity: 0 !important; }
 
-
-/* ===== Slug pill: одно и то же центрирование в UI и во время экспорта ===== */
 #texts > .pill{
   display:inline-flex;
   align-items:center;
@@ -103,36 +98,47 @@ button:hover{background:#131d33}
   text-align:left !important;
 }
 
-
-/* v6.3.9 — Slug: compact dot↔text spacing & neutral vertical paddings */
+/* ебучие интервалы */
 #texts > .pill{ gap:4px !important; padding-top:0 !important; padding-bottom:0 !important; }
 #texts > .pill #dot{ margin-right:0 !important; }
 #texts > .pill #slugOut{ line-height:1 !important; }
 
-/* export should mirror UI */
 .exporting #texts > .pill{ gap:4px !important; padding-top:0 !important; padding-bottom:0 !important; }
 .exporting #texts > .pill #dot{ margin-right:0 !important; }
 .exporting #texts > .pill #slugOut{ line-height:1 !important; }
 
-
-/* v6.3.9 — Title wrap + Brand edge alignment */
 #titleOut{
   white-space: normal !important;
   word-break: break-word !important;
   overflow-wrap: break-word !important;
   line-height: 1.1;
 }
-/* чуть подравниваем бренд под левую кромку заголовка/описания */
+
 #brandOut{ padding-left: 2px !important; vertical-align: middle; }
 .exporting #brandOut{ padding-left: 2px !important; vertical-align: middle !important; }
 
-
-/* v6.3.9 — Export-only: center slug text box to match dot center */
 .exporting #texts > .pill{
   align-items: center !important;
 }
 .exporting #texts > .pill #slugOut{
   display: flex !important;
-  align-items: center !important;   /* center glyph box vertically */
+  align-items: center !important;
   line-height: 1 !important;
+}
+
+
+/* выбор языка */
+.top { gap: 10px; }
+.lang select{
+  background:#0d1422;border:1px solid #263248;color:#e7eef6;
+  border-radius:999px;padding:6px 10px;font-weight:700;font-size:12px
+}
+
+
+.top .lang select{
+  height: 32px;
+  line-height: 32px;
+  padding: 0 12px;
+  display: inline-flex;
+  align-items: center;
 }

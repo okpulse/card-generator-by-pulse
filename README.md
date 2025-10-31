@@ -1,5 +1,11 @@
 # Card Generator by Pulse
 
+[Русский](README.md) | [English](README.en.md) | [Українська](README.ua.md)
+
+---
+
+# Card Generator by Pulse
+
 **Card Generator by Pulse** — это инструмент, позволяющий быстро и просто создавать карточки или баннеры для сайта, блога или Telegram‑канала (ну или куда-то ещё).  
 
 <img src="./assets/interface.png" alt="Interface" width="800" style="max-width:100%;">
@@ -88,6 +94,3 @@ cd card-generator-by-pulse
 - [💎 Patreon](https://www.patreon.com/pulsepagemy)  
 - 💰 **USDT (TRC20):** `TMDLY3qRZN81b5xn9Z9Wg2y3Y6aeBpV5Z6`  
 - [⭐ Стать спонсором на YouTube](https://www.youtube.com/channel/UCojEUrPvEvkUXEU3QWwhCwg/join)
-
-
-

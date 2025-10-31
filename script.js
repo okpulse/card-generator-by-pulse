@@ -1,12 +1,288 @@
+
+// === I18N (RU / UK / EN) ===
+(function(){
+  const LS_KEY = 'cg_lang';
+
+  const T = {
+    ru: {
+      h_colors: "Цвета",
+      h_text_title_desc: "Текст — заголовок и описание",
+      h_text_slug_brand: "Текст — slug и бренд",
+      h_text_params: "Параметры текста",
+      h_icon: "Иконка",
+      h_plate: "Плашка",
+      h_presets_export: "Пресеты и экспорт",
+
+      lbl_title: "Заголовок",
+      lbl_desc: "Описание",
+      lbl_slug: "Slug",
+      lbl_brand: "Надпись (бренд)",
+      lbl_txt_scale: "Масштаб",
+      lbl_txt_opacity: "Непрозрачность",
+      lbl_txt_x: "Смещение X",
+      lbl_txt_y: "Смещение Y",
+
+      lbl_icon_upload: "Загрузить иконку",
+      lbl_icon_scale: "Масштаб",
+      lbl_icon_opacity: "Непрозрачность",
+      lbl_icon_x: "Смещение X",
+      lbl_icon_y: "Смещение Y",
+
+      lbl_plate_width: "Ширина",
+      lbl_plate_round: "Скругление",
+      lbl_plate_blur: "Размытие",
+      lbl_plate_opacity: "Непрозрачность",
+
+      color_bg1: "Фон 1",
+      color_bg2: "Фон 2",
+      color_bg3: "Фон 3",
+      color_text: "Текст",
+      color_secondary: "Вторичный",
+      color_a1: "Акцент 1",
+      color_a2: "Акцент 2",
+      color_brand: "Бренд",
+
+      btn_png: "Скачать PNG",
+      btn_webp: "Скачать WEBP",
+      btn_png2: "Скачать PNG x2",
+      btn_webp2: "Скачать WEBP x2",
+      btn_icon_clear: "Удалить файл",
+
+      default_title: "Заголовок категории",
+      default_desc: "Короткое описание: о чем эта категория и что пользователь найдет внутри",
+      default_slug: "category-slug",
+      default_brand: "ваш-сайт.com • раздел / категория",
+      pill_slug: "category-slug"
+    },
+    uk: {
+      h_colors: "Кольори",
+      h_text_title_desc: "Текст — заголовок і опис",
+      h_text_slug_brand: "Текст — slug і бренд",
+      h_text_params: "Параметри тексту",
+      h_icon: "Іконка",
+      h_plate: "Плашка",
+      h_presets_export: "Пресети та експорт",
+
+      lbl_title: "Заголовок",
+      lbl_desc: "Опис",
+      lbl_slug: "Slug",
+      lbl_brand: "Напис (бренд)",
+      lbl_txt_scale: "Масштаб",
+      lbl_txt_opacity: "Непрозорість",
+      lbl_txt_x: "Зміщення X",
+      lbl_txt_y: "Зміщення Y",
+
+      lbl_icon_upload: "Завантажити іконку",
+      lbl_icon_scale: "Масштаб",
+      lbl_icon_opacity: "Непрозорість",
+      lbl_icon_x: "Зміщення X",
+      lbl_icon_y: "Зміщення Y",
+
+      lbl_plate_width: "Ширина",
+      lbl_plate_round: "Скруглення",
+      lbl_plate_blur: "Розмиття",
+      lbl_plate_opacity: "Непрозорість",
+
+      color_bg1: "Фон 1",
+      color_bg2: "Фон 2",
+      color_bg3: "Фон 3",
+      color_text: "Текст",
+      color_secondary: "Вторинний",
+      color_a1: "Акцент 1",
+      color_a2: "Акцент 2",
+      color_brand: "Бренд",
+
+      btn_png: "Завантажити PNG",
+      btn_webp: "Завантажити WEBP",
+      btn_png2: "Завантажити PNG x2",
+      btn_webp2: "Завантажити WEBP x2",
+      btn_icon_clear: "Видалити файл",
+
+      default_title: "Заголовок категорії",
+      default_desc: "Короткий опис: про що ця категорія і що користувач знайде всередині",
+      default_slug: "category-slug",
+      default_brand: "ваш-сайт.com • розділ / категорія",
+      pill_slug: "category-slug"
+    },
+    en: {
+      h_colors: "Colors",
+      h_text_title_desc: "Text — title and description",
+      h_text_slug_brand: "Text — slug and brand",
+      h_text_params: "Text settings",
+      h_icon: "Icon",
+      h_plate: "Plate",
+      h_presets_export: "Presets & export",
+
+      lbl_title: "Title",
+      lbl_desc: "Description",
+      lbl_slug: "Slug",
+      lbl_brand: "Brand text",
+      lbl_txt_scale: "Scale",
+      lbl_txt_opacity: "Opacity",
+      lbl_txt_x: "Offset X",
+      lbl_txt_y: "Offset Y",
+
+      lbl_icon_upload: "Upload icon",
+      lbl_icon_scale: "Scale",
+      lbl_icon_opacity: "Opacity",
+      lbl_icon_x: "Offset X",
+      lbl_icon_y: "Offset Y",
+
+      lbl_plate_width: "Width",
+      lbl_plate_round: "Corner radius",
+      lbl_plate_blur: "Blur",
+      lbl_plate_opacity: "Opacity",
+
+      color_bg1: "BG 1",
+      color_bg2: "BG 2",
+      color_bg3: "BG 3",
+      color_text: "Text",
+      color_secondary: "Secondary",
+      color_a1: "Accent 1",
+      color_a2: "Accent 2",
+      color_brand: "Brand",
+
+      btn_png: "Download PNG",
+      btn_webp: "Download WEBP",
+      btn_png2: "Download PNG x2",
+      btn_webp2: "Download WEBP x2",
+      btn_icon_clear: "Remove file",
+
+      default_title: "Category title",
+      default_desc: "Short description: what this category is about and what the user will find inside",
+      default_slug: "category-slug",
+      default_brand: "your-site.com • section / category",
+      pill_slug: "category-slug"
+    }
+  };
+
+  
+  function collectDomDefaults(){
+    var vals = [];
+    ['titleIn','descIn','slugIn','brandIn','titleOut','descOut','brandOut','slugOut'].forEach(function(id){
+      var el = document.getElementById(id);
+      if (!el) return;
+      ['data-default-ru','data-default-uk','data-default-en'].forEach(function(attr){
+        var v = el.getAttribute && el.getAttribute(attr);
+        if (v && v.trim()) vals.push(v.trim());
+      });
+    });
+    // RU 
+    vals.push('Короткое описание: о чем эта категория и что пользователь найдет внутри');
+    vals.push('Короткое описание: о чём эта категория и что пользователь найдёт внутри');
+    return new Set(vals);
+  }
+
+  function getSavedLang(){
+    try{ return localStorage.getItem(LS_KEY) || ''; }catch(e){ return ''; }
+  }
+  function saveLang(lang){
+    try{ localStorage.setItem(LS_KEY, lang); }catch(e){}
+  }
+  function detectLang(){
+    var s = (navigator.language || navigator.userLanguage || 'ru').toLowerCase();
+    if (s.startsWith('en')) return 'en';
+    if (s.startsWith('uk') || s.startsWith('ua')) return 'uk';
+    return 'ru';
+  }
+
+  function setText(node, key, lang){
+    if (!node || !key) return;
+    var dict = T[lang] || T.ru;
+    var v = dict[key] || key;
+    node.textContent = v;
+  }
+
+  function applyI18N(lang){
+    var dict = T[lang] || T.ru;
+    // h3 
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var key = el.getAttribute('data-i18n');
+      setText(el, key, lang);
+    });
+
+    // Default values 
+    var titleIn = document.getElementById('titleIn');
+    var descIn  = document.getElementById('descIn');
+    var slugIn  = document.getElementById('slugIn');
+    var brandIn = document.getElementById('brandIn');
+
+    var knownDefaults = collectDomDefaults();
+    ; (function(){ var _tmp = new Set([
+      T.ru.default_title, T.uk.default_title, T.en.default_title,
+      T.ru.default_desc,  T.uk.default_desc,  T.en.default_desc,
+      T.ru.default_slug,  T.uk.default_slug,  T.en.default_slug,
+      T.ru.default_brand, T.uk.default_brand, T.en.default_brand
+    ]); _tmp.forEach(function(v){ knownDefaults.add(v); }); })();
+
+    function maybeSet(el, newVal){
+      if (!el) return;
+      var cur = (el.value || '').trim();
+      if (!cur || knownDefaults.has(cur)){ el.value = newVal; }
+    }
+
+    maybeSet(titleIn, dict.default_title);
+    maybeSet(descIn,  dict.default_desc);
+    maybeSet(slugIn,  dict.default_slug);
+    maybeSet(brandIn, dict.default_brand);
+
+    function maybeSetOut(id, newVal){
+      var out = document.getElementById(id);
+      if (!out) return;
+      var t = (out.textContent || '').trim();
+      if (!t || knownDefaults.has(t)){ out.textContent = newVal; }
+    }
+    maybeSetOut('titleOut', dict.default_title);
+    maybeSetOut('descOut',  dict.default_desc);
+    maybeSetOut('brandOut', dict.default_brand);
+    maybeSetOut('slugOut',  dict.pill_slug);
+  }
+
+  function initLang(){
+    var sel = document.getElementById('langSelect');
+    var lang = getSavedLang() || detectLang();
+    if (sel){
+      sel.value = (lang in T) ? lang : 'ru';
+      sel.addEventListener('change', function(){
+        var v = sel.value;
+        applyI18N(v);
+        saveLang(v);
+        try{ if (typeof window.syncText === 'function') window.syncText(); }catch(e){}
+      });
+    }
+    applyI18N(sel ? sel.value : lang);
+    try{ if (typeof window.syncText === 'function') window.syncText(); }catch(e){}
+  }
+
+  if (document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', initLang);
+  } else {
+    initLang();
+  window.addEventListener('load', function(){
+    var sel = document.getElementById('langSelect');
+    var v = sel ? sel.value : (getSavedLang() || detectLang());
+    applyI18N(v);
+    try{ if (typeof window.syncText === 'function') window.syncText(); }catch(e){}
+    setTimeout(function(){
+      var sel2 = document.getElementById('langSelect');
+      var v2 = sel2 ? sel2.value : (getSavedLang() || detectLang());
+      applyI18N(v2);
+      try{ if (typeof window.syncText === 'function') window.syncText(); }catch(e){}
+    }, 0);
+  });
+
+  }
+})();
+// === END I18N ===
+
+
 (function(){
   document.addEventListener('DOMContentLoaded', function(){ try{ updatePlate(); }catch(e){} });
   const $ = id => document.getElementById(id);
   const setVar = (k,v)=> $('canvas').style.setProperty(k,v);
 
-  // plate as single PATH with left arc (no circle)
   const platePath = $('platePath'), blurNode=$('blurNode'), g1=$('g1'), g2=$('g2');
 
-  // text/icon nodes
   const texts = $('texts'), slugOut=$('slugOut'), titleOut=$('titleOut'), descOut=$('descOut'), brandOut=$('brandOut');
   const iconImg=$('iconImg');
 
@@ -22,25 +298,16 @@
   
   function updatePlate(){
     const W=1200, H=630;
-    const widthPct = (plateWidth && plateWidth.value!=null) ? 100 - (+plateWidth.value||0) : 35;  // left = wider, right = thinner
+    const widthPct = (plateWidth && plateWidth.value!=null) ? 100 - (+plateWidth.value||0) : 35;
     const pw = W * widthPct/100;
     const right = W;
-    const epsilon = Math.round((+blur.value||0)*4 + 20); // move edge out of view
+    const epsilon = Math.round((+blur.value||0)*4 + 20);
     const rightPlus = right + epsilon;
     const left = right - pw;
 
-    const rMax = Math.min(H/2, pw/2); // smooth max
+    const rMax = Math.min(H/2, pw/2);
     const r = Math.max(0, Math.min(rMax, (+round.value/100)*rMax));
 
-    // Rounded-rectangle path: rounded TOP-LEFT and BOTTOM-LEFT only
-    // Points:
-    // P0 = (right, 0)                     // start top-right
-    // down to (right, H)
-    // left to (left + r, H)
-    // arc to (left, H - r)  (bottom-left corner)
-    // up to (left, r)
-    // arc to (left + r, 0)  (top-left corner)
-    // back to start
     const p0 = `${right} 0`;
     const p1 = `${right} ${H}`;
     const p2 = `${left + r} ${H}`;
@@ -63,10 +330,9 @@
     (function(){
   document.addEventListener('DOMContentLoaded', function(){ try{ updatePlate(); }catch(e){} });
       const base = Math.max(0, +blur.value || 0);
-      // widthPct defined above: widthPct = 100 - (+plateWidth.value||0)
-      const w = Math.max(0, Math.min(100, widthPct)); // 0..100
-      const thin = Math.max(0, (10 - w)) / 10;        // 0..1 for w<10%
-      const factor = 1 + thin * 3.0;                  // up to ~4x
+      const w = Math.max(0, Math.min(100, widthPct));
+      const thin = Math.max(0, (10 - w)) / 10;
+      const factor = 1 + thin * 3.0;
       const extraPx = thin * 8;
       const maskBlur = Math.round(base * factor + extraPx);
       const heavy    = Math.round(maskBlur * 1.9);
@@ -121,7 +387,6 @@
         iconImg.src = '';
         iconImg.style.display = 'none';
         iconIn.value = '';
-        // keep sliders/state; just visually remove the icon
       }catch(e){}
     });
   }
@@ -154,16 +419,7 @@
   iconBlend.addEventListener('change', syncIcon);
   iconBlend.addEventListener('input', syncIcon);
 
-  // export
-  
 
-
-// Keep description ~15% narrower than title using ResizeObserver (stable, no jitter)
-
-
-
-
-// === Width sync (revert): block width = rendered title width; desc = 85% of block ===
 (function initTextWidths(){
   const block = document.querySelector('.textBlock');
   const title = document.getElementById('titleOut');
@@ -175,10 +431,9 @@
     if (!tRect.width) return;
     const bcs = getComputedStyle(block);
     const pad = (parseFloat(bcs.paddingLeft)||0) + (parseFloat(bcs.paddingRight)||0);
-    // make block just wide enough to fit the current single-line title
     let w = Math.round(tRect.width + pad);
     const baseline = Math.max(parseFloat(title.style.maxWidth)||0, 480);
-    if (!isFinite(w) || w < baseline) w = baseline; // анти-схлопывание даже при вводе 1 символа
+    if (!isFinite(w) || w < baseline) w = baseline; // анти-схлопывание (костыль)
     block.style.width = w + 'px';
     block.style.maxWidth = w + 'px';
     const inner = Math.max(0, w - pad);
@@ -200,7 +455,7 @@
     window.syncText = function(){ _orig.apply(this, arguments); apply(); };
   }
 })();
-// === helpers: рисуем иконку один-в-один как в превью ===
+//рисуем иконку, в рот ей ноги
 function drawIconMappedToOut(ctx, outCanvas, canvasEl, iconEl, opacity, blend) {
   const cRect = canvasEl.getBoundingClientRect();
   const iRect = iconEl.getBoundingClientRect();
@@ -227,7 +482,6 @@ function exportAs(mime) {
   const mimeType = mime || 'image/png';
 
   document.body.classList.add('exporting');
-  // PATCH: conditionally hide icon only if blend mode is not 'source-over'
   var _iconEl = document.getElementById('iconImg') || document.getElementById('icon') || (document.querySelector('#iconWrap img'));
   var _prevVisibility = _iconEl ? _iconEl.style.visibility : null;
   var _prevOpacity = _iconEl ? _iconEl.style.opacity : null;
@@ -237,7 +491,6 @@ function exportAs(mime) {
     _blendValPre = (_bsel && _bsel.value) ? _bsel.value : (_iconEl ? (getComputedStyle(_iconEl).mixBlendMode || 'source-over') : 'source-over');
     if (_blendValPre === 'normal') _blendValPre = 'source-over';
   } catch(e){ _blendValPre = 'source-over'; }
-  // hide only when actual mixing is requested
   if (_iconEl && _blendValPre !== 'source-over'){ _iconEl.style.visibility = 'hidden'; }
 
 
@@ -250,7 +503,6 @@ function exportAs(mime) {
       out.height = baseCv.height;
       const ctx = out.getContext('2d');
       ctx.drawImage(baseCv, 0, 0);
-      // PATCH: redraw icon with chosen blend mode (from UI) at export resolution
       try {
         var iconEl = document.getElementById('iconImg') || document.getElementById('icon') || (document.querySelector('#iconWrap img'));
         var canvasEl = document.getElementById('canvas');
@@ -262,12 +514,10 @@ function exportAs(mime) {
           blendVal = (bsel && bsel.value) ? bsel.value : (iconEl ? (getComputedStyle(iconEl).mixBlendMode || 'source-over') : 'source-over');
           if (blendVal === 'normal') blendVal = 'source-over';
         } catch(e){}
-        // Only redraw when mixing is active; otherwise baseCv already has correct z-order
         if (iconEl && canvasEl && blendVal !== 'source-over'){
           drawIconMappedToOut(ctx, out, canvasEl, iconEl, iconOpacityVal, blendVal);
         }
       } catch(e){ console.warn('blend redraw failed', e); }
-      // restore icon visibility (only matters if we hid earlier)
       if (_iconEl){ _iconEl.style.visibility = _prevVisibility || ''; _iconEl.style.opacity = _prevOpacity || ''; }
 
 
@@ -282,9 +532,6 @@ function exportAs(mime) {
     });
 }
 
-
-
-
 // === экспорт X2 ===
 
 function exportAsX(mime) {
@@ -293,7 +540,6 @@ function exportAsX(mime) {
   const mimeType = mime || 'image/png';
 
   document.body.classList.add('exporting');
-  // PATCH: conditionally hide icon only if blend mode is not 'source-over'
   var _iconEl = document.getElementById('iconImg') || document.getElementById('icon') || (document.querySelector('#iconWrap img'));
   var _prevVisibility = _iconEl ? _iconEl.style.visibility : null;
   var _prevOpacity = _iconEl ? _iconEl.style.opacity : null;
@@ -303,7 +549,6 @@ function exportAsX(mime) {
     _blendValPre = (_bsel && _bsel.value) ? _bsel.value : (_iconEl ? (getComputedStyle(_iconEl).mixBlendMode || 'source-over') : 'source-over');
     if (_blendValPre === 'normal') _blendValPre = 'source-over';
   } catch(e){ _blendValPre = 'source-over'; }
-  // hide only when actual mixing is requested
   if (_iconEl && _blendValPre !== 'source-over'){ _iconEl.style.visibility = 'hidden'; }
 
 
@@ -318,7 +563,6 @@ function exportAsX(mime) {
       ctx.imageSmoothingEnabled = true;
       ctx.imageSmoothingQuality = 'high';
       ctx.drawImage(baseCv, 0, 0, out.width, out.height);
-      // PATCH: redraw icon with chosen blend mode (from UI) at export resolution
       try {
         var iconEl = document.getElementById('iconImg') || document.getElementById('icon') || (document.querySelector('#iconWrap img'));
         var canvasEl = document.getElementById('canvas');
@@ -330,12 +574,10 @@ function exportAsX(mime) {
           blendVal = (bsel && bsel.value) ? bsel.value : (iconEl ? (getComputedStyle(iconEl).mixBlendMode || 'source-over') : 'source-over');
           if (blendVal === 'normal') blendVal = 'source-over';
         } catch(e){}
-        // Only redraw when mixing is active; otherwise baseCv already has correct z-order
         if (iconEl && canvasEl && blendVal !== 'source-over'){
           drawIconMappedToOut(ctx, out, canvasEl, iconEl, iconOpacityVal, blendVal);
         }
       } catch(e){ console.warn('blend redraw failed', e); }
-      // restore icon visibility (only matters if we hid earlier)
       if (_iconEl){ _iconEl.style.visibility = _prevVisibility || ''; _iconEl.style.opacity = _prevOpacity || ''; }
 
 
@@ -353,7 +595,7 @@ function exportAsX(mime) {
 
 
 
-// === wiring кнопок экспорта ===
+// === кнопок экспорта ===
 (function wireExportButtons() {
   const pngBtn   = document.getElementById('pngBtn');
   const webpBtn  = document.getElementById('webpBtn');
@@ -366,13 +608,12 @@ function exportAsX(mime) {
   if (webp2Btn) webp2Btn.addEventListener('click',() => exportAsX('image/webp', 2));
 })();
 
-// <<< ВАЖНО: это должен быть самый последний блок файла >>>
 })();
 
 window.addEventListener('load', function(){ try{ updatePlate(); }catch(e){} });
 
 
-// === v6.3.9: Title width baseline ("Заголовок категории" + 2 symbols) ====
+// Заголовок категории + 2 (снова костыль, но работает)
 (function(){
   function copyTextStyles(src, dst){
     var cs = getComputedStyle(src);
@@ -388,7 +629,7 @@ window.addEventListener('load', function(){ try{ updatePlate(); }catch(e){} });
     var desc  = document.getElementById('descOut');
     if (!title) return;
     var sample = "Заголовок категории";
-    var extra = "мм"; // 2 символа по умолчанию
+    var extra = "мм"; // можно добавить, для увеличения длины заголовка
     try{
       var val = (tin && tin.value) ? String(tin.value) : "";
       var idx = val.indexOf(sample);
@@ -406,9 +647,9 @@ window.addEventListener('load', function(){ try{ updatePlate(); }catch(e){} });
     document.body.appendChild(probe);
     var w = Math.round(probe.getBoundingClientRect().width);
     document.body.removeChild(probe);
-    if (!isFinite(w) || w < 360) w = 480; // анти-схлопывание
+    if (!isFinite(w) || w < 360) w = 480; // анти-схлопывание (костыль)
     title.style.maxWidth = w + 'px';
-    if (desc) desc.style.maxWidth = w + 'px'; // описание следует ширине заголовка
+    if (desc) desc.style.maxWidth = w + 'px';
   }
   function schedule(){ try{ requestAnimationFrame(applyTitleBaseline); }catch(e){ applyTitleBaseline(); } }
   window.addEventListener('load', schedule);
@@ -416,7 +657,6 @@ window.addEventListener('load', function(){ try{ updatePlate(); }catch(e){} });
   if (document.fonts && document.fonts.ready){ document.fonts.ready.then(schedule).catch(function(){}); }
   var tin = document.getElementById('titleIn');
   if (tin){ tin.addEventListener('input', schedule); }
-  // делаем доступным для ручного вызова при необходимости
   window._applyTitleBaseline = applyTitleBaseline;
 })();
 
@@ -426,14 +666,13 @@ window.addEventListener('load', function(){ try{ updatePlate(); }catch(e){} });
     try{
       var sel = document.getElementById('iconBlend');
       if (sel){
-        // Force normal (source-over) and hide controls
         try{ sel.value = 'normal'; }catch(e){}
         sel.disabled = true;
         sel.style.display = 'none';
         var lab = document.querySelector('label[for="iconBlend"]');
         if (lab) lab.style.display = 'none';
       }
-      // Ensure runtime nodes are normal-blended
+      // в душе не ебу как правильно
       try{
         var wrap = document.getElementById('iconWrap');
         if (wrap){ wrap.style.mixBlendMode = 'normal'; }

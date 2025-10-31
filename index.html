@@ -1,150 +1,142 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="ru">
 <head>
 <meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Card Generator by Pulse</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&amp;display=swap" rel="stylesheet"/>
+<link href="styles.css" rel="stylesheet"/>
 </head>
 <body>
 <div class="wrap">
-  <header class="top"><a class="badge" href="https://hacker-basement.com" target="_blank" rel="noopener">Card Generator by Pulse</a></header>
-
-  <div class="layout">
-    <div class="stack">
-      <div id="canvas" class="canvas">
-        <svg id="plate" viewBox="0 0 1200 630" preserveAspectRatio="none">
-          <defs>
-            <mask id="plateMask" x="-150%" y="-150%" width="400%" height="400%">
-              <g filter="url(#plateBlur)">
-                <path id="plateMaskPath" fill="#fff"/>
-              </g>
-            </mask>
-            <filter id="plateBlurHeavy" x="-250%" y="-250%" width="600%" height="600%" filterUnits="objectBoundingBox">
-              <feGaussianBlur id="blurNodeHeavy" stdDeviation="14"/>
-            </filter>
-            <linearGradient id="plateGrad" x1="0" y1="0" x2="1" y2="1">
-              <stop id="g1" offset="0%" stop-color="#62d2ff"/>
-              <stop id="g2" offset="100%" stop-color="#4864f0"/>
-            </linearGradient>
-            <filter id="plateBlur" x="-250%" y="-250%" width="600%" height="600%">
-              <feGaussianBlur id="blurNode" stdDeviation="8"/>
-            </filter>
-          </defs>
-          <path id="plateGlow" fill="url(#plateGrad)" opacity="0.55" filter="url(#plateBlurHeavy)"/>
-          <rect id="plateCore" x="0" y="0" width="100%" height="100%" fill="url(#plateGrad)" mask="url(#plateMask)" opacity="0.9"/>
-        </svg>
-
-        <div id="texts">
-          <div class="pill"><span id="dot"></span><span id="slugOut">category-slug</span></div>
-          <div class="textBlock">
-            <h1 id="titleOut">Заголовок категории</h1>
-            <p id="descOut">Короткое описание: о чем эта категория и что пользователь найдет внутри</p>
-            <div id="brandOut">ваш-сайт.com • раздел / категория</div>
-          </div>
-        </div>
-
-        <div id="iconWrap"><img id="iconImg" alt="icon" style="display:none"></div>
-      </div>
-
-      <div class="panel colors">
-        <h3>Цвета</h3>
-        <div class="colorsRow">
-          <label><input type="color" id="bg1" value="#233654"><span>Фон 1</span></label>
-          <label><input type="color" id="bg2" value="#2b4060"><span>Фон 2</span></label>
-          <label><input type="color" id="bg3" value="#0a121f"><span>Фон 3</span></label>
-          <label><input type="color" id="tcol" value="#e8eef8"><span>Текст</span></label>
-          <label><input type="color" id="mcol" value="#aab7c8"><span>Вторичный</span></label>
-          <label><input type="color" id="a1" value="#62d2ff"><span>Акцент 1</span></label>
-          <label><input type="color" id="a2" value="#4864f0"><span>Акцент 2</span></label>
-          <label><input type="color" id="bcol" value="#cfd7e6"><span>Бренд</span></label>
-        </div>
-      </div>
-    </div>
-
-    <aside class="panel controls">
-      <!-- Top: two columns text inputs -->
-      <div class="grid-2">
-        <div class="group">
-          <h3>Текст — заголовок и описание</h3>
-          <label>Заголовок<input id="titleIn" type="text" value="Заголовок категории"></label>
-          <label>Описание<input id="descIn" type="text" value="Короткое описание: о чем эта категория и что пользователь найдет внутри"></label>
-        </div>
-        <div class="group">
-          <h3>Текст — slug и бренд</h3>
-          <label>Slug<input id="slugIn" type="text" value="category-slug"></label>
-          <label>Надпись (бренд)<input id="brandIn" type="text" value="ваш-сайт.com • раздел / категория"></label>
-        </div>
-      </div>
-
-      <!-- Middle: left text sliders, right icon controls -->
-      <div class="grid-2">
-        <div class="group">
-          <h3>Параметры текста</h3>
-          <label>Масштаб<input id="txtScale" type="range" min="60" max="180" value="100"></label>
-          <label>Непрозрачность<input id="txtOpacity" type="range" min="0" max="100" value="100"></label>
-          <label>Смещение X<input id="txtX" type="range" min="-150" max="450" value="0"></label>
-          <label>Смещение Y<input id="txtY" type="range" min="-150" max="300" value="0"></label>
-        </div>
-        <div class="group">
-          <h3>Иконка</h3>
-          <label>Загрузить иконку<input id="iconIn" type="file" accept=".png,.svg"></label>
-          <button id="iconClear" type="button">Удалить файл</button>
-          <label>Масштаб<input id="iconScale" type="range" min="30" max="200" value="100"></label>
-          <label>Непрозрачность<input id="iconOpacity" type="range" min="0" max="100" value="25"></label>
-          <label>Смещение X<input id="iconX" type="range" min="-800" max="800" value="0"></label>
-          <label>Смещение Y<input id="iconY" type="range" min="-800" max="800" value="0"></label>
-          <label>
-            <select id="iconBlend">
-              <option value="normal" selected>normal</option>
-              <option value="screen">screen</option>
-              <option value="overlay">overlay</option>
-              <option value="multiply">multiply</option>
-              <option value="soft-light">soft-light</option>
-            </select>
-          </label>
-        </div>
-      </div>
-
-      <!-- Bottom: plate controls -->
-      <div class="group plate">
-        <h3>Плашка</h3>
-        <div class="grid-4">
-          <label>Ширина<input id="plateWidth" type="range" min="0" max="100" value="65"></label>
-          <label>Скругление<input id="round" type="range" min="0" max="100" value="60"></label>
-          <label>Размытие<input id="blur" type="range" min="0" max="60" value="8"></label>
-          <label>Непрозрачность<input id="plateOpacity" type="range" min="0" max="100" value="90"></label>
-        </div>
-      </div>
-
-      <div class="group">
-        <h3>Пресеты и экспорт</h3>
-        <select id="preset">
-          <option value="ocean">Ocean Blue</option>
-          <option value="forest">Forest Green</option>
-          <option value="violet">Violet Night</option>
-          <option value="midnight">Midnight</option>
-          <option value="sunset">Sunset</option>
-          <option value="slate">Slate</option>
-          <option value="teal">Teal</option>
-          <option value="amber">Amber</option>
-          <option value="candy">Candy</option>
-          <option value="graphite">Graphite</option>
-        </select>
-        <div class="btns">
-          <button id="pngBtn">Скачать PNG</button>
-          <button id="webpBtn">Скачать WEBP</button>
-        </div>
-        <div class="btns">
-          <button id="png2Btn">Скачать PNG x2</button>
-          <button id="webp2Btn">Скачать WEBP x2</button>
-        </div>
-      </div>
-    </aside>
-  </div>
+<header class="top"><div class="lang"><select id="langSelect"><option value="ru">Русский</option><option value="uk">Українська</option><option value="en">English</option></select></div><a class="badge" href="https://github.com/okpulse/card-generator-by-pulse" rel="noopener" target="_blank">Card Generator by Pulse</a></header>
+<div class="layout">
+<div class="stack">
+<div class="canvas" id="canvas">
+<svg id="plate" preserveaspectratio="none" viewbox="0 0 1200 630">
+<defs>
+<mask height="400%" id="plateMask" width="400%" x="-150%" y="-150%">
+<g filter="url(#plateBlur)">
+<path fill="#fff" id="plateMaskPath"></path>
+</g>
+</mask>
+<filter filterunits="objectBoundingBox" height="600%" id="plateBlurHeavy" width="600%" x="-250%" y="-250%">
+<fegaussianblur id="blurNodeHeavy" stddeviation="14"></fegaussianblur>
+</filter>
+<lineargradient id="plateGrad" x1="0" x2="1" y1="0" y2="1">
+<stop id="g1" offset="0%" stop-color="#62d2ff"></stop>
+<stop id="g2" offset="100%" stop-color="#4864f0"></stop>
+</lineargradient>
+<filter height="600%" id="plateBlur" width="600%" x="-250%" y="-250%">
+<fegaussianblur id="blurNode" stddeviation="8"></fegaussianblur>
+</filter>
+</defs>
+<path fill="url(#plateGrad)" filter="url(#plateBlurHeavy)" id="plateGlow" opacity="0.55"></path>
+<rect fill="url(#plateGrad)" height="100%" id="plateCore" mask="url(#plateMask)" opacity="0.9" width="100%" x="0" y="0"></rect>
+</svg>
+<div id="texts">
+<div class="pill"><span id="dot"></span><span data-default-en="category-slug" data-default-ru="category-slug" data-default-uk="category-slug" id="slugOut">category-slug</span></div>
+<div class="textBlock">
+<h1 data-default-en="Category title" data-default-ru="Заголовок категории" data-default-uk="Заголовок категорії" id="titleOut">Заголовок категории</h1>
+<p data-default-en="Short description: what this category is about and what the user will find inside" data-default-ru="Короткое описание: о чем эта категория и что пользователь найдет внутри" data-default-uk="Короткий опис: про що ця категорія і що користувач знайде всередині" id="descOut">Короткое описание: о чем эта категория и что пользователь найдет внутри</p>
+<div data-default-en="your-site.com • section / category" data-default-ru="ваш-сайт.com • раздел / категория" data-default-uk="ваш-сайт.com • розділ / категорія" id="brandOut">ваш-сайт.com • раздел / категория</div>
 </div>
-
+</div>
+<div id="iconWrap"><img alt="icon" id="iconImg" style="display:none"/></div>
+</div>
+<div class="panel colors">
+<h3 data-i18n="h_colors">Цвета</h3>
+<div class="colorsRow">
+<label><input id="bg1" type="color" value="#233654"/><span data-i18n="color_bg1">Фон 1</span></label>
+<label><input id="bg2" type="color" value="#2b4060"/><span data-i18n="color_bg2">Фон 2</span></label>
+<label><input id="bg3" type="color" value="#0a121f"/><span data-i18n="color_bg3">Фон 3</span></label>
+<label><input id="tcol" type="color" value="#e8eef8"/><span data-i18n="color_text">Текст</span></label>
+<label><input id="mcol" type="color" value="#aab7c8"/><span data-i18n="color_secondary">Вторичный</span></label>
+<label><input id="a1" type="color" value="#62d2ff"/><span data-i18n="color_a1">Акцент 1</span></label>
+<label><input id="a2" type="color" value="#4864f0"/><span data-i18n="color_a2">Акцент 2</span></label>
+<label><input id="bcol" type="color" value="#cfd7e6"/><span data-i18n="color_brand">Бренд</span></label>
+</div>
+</div>
+</div>
+<aside class="panel controls">
+<!-- Top: two columns text inputs -->
+<div class="grid-2">
+<div class="group">
+<h3 data-i18n="h_text_title_desc">Текст — заголовок и описание</h3>
+<label><span data-i18n="lbl_title">Заголовок</span><input data-default-en="Category title" data-default-ru="Заголовок категории" data-default-uk="Заголовок категорії" id="titleIn" type="text" value="Заголовок категории"/></label>
+<label><span data-i18n="lbl_desc">Описание</span><input data-default-en="Short description: what this category is about and what the user will find inside" data-default-ru="Короткое описание: о чем эта категория и что пользователь найдет внутри" data-default-uk="Короткий опис: про що ця категорія і що користувач знайде всередині" id="descIn" type="text" value="Короткое описание: о чем эта категория и что пользователь найдет внутри"/></label>
+</div>
+<div class="group">
+<h3 data-i18n="h_text_slug_brand">Текст — slug и бренд</h3>
+<label><span data-i18n="lbl_slug">Slug</span><input data-default-en="category-slug" data-default-ru="category-slug" data-default-uk="category-slug" id="slugIn" type="text" value="category-slug"/></label>
+<label><span data-i18n="lbl_brand">Надпись (бренд)</span><input data-default-en="your-site.com • section / category" data-default-ru="ваш-сайт.com • раздел / категория" data-default-uk="ваш-сайт.com • розділ / категорія" id="brandIn" type="text" value="ваш-сайт.com • раздел / категория"/></label>
+</div>
+</div>
+<!-- Middle: left text sliders, right icon controls -->
+<div class="grid-2">
+<div class="group">
+<h3 data-i18n="h_text_params">Параметры текста</h3>
+<label><span data-i18n="lbl_txt_scale">Масштаб</span><input id="txtScale" max="180" min="60" type="range" value="100"/></label>
+<label><span data-i18n="lbl_txt_opacity">Непрозрачность</span><input id="txtOpacity" max="100" min="0" type="range" value="100"/></label>
+<label><span data-i18n="lbl_txt_x">Смещение X</span><input id="txtX" max="450" min="-150" type="range" value="0"/></label>
+<label><span data-i18n="lbl_txt_y">Смещение Y</span><input id="txtY" max="300" min="-150" type="range" value="0"/></label>
+</div>
+<div class="group">
+<h3 data-i18n="h_icon">Иконка</h3>
+<label class=""><span data-i18n="lbl_icon_upload">Загрузить иконку</span><input accept=".png,.svg" id="iconIn" type="file"/></label>
+<button data-i18n="btn_icon_clear" id="iconClear" type="button">Удалить файл</button>
+<label><span data-i18n="lbl_icon_scale">Масштаб</span><input id="iconScale" max="200" min="30" type="range" value="100"/></label>
+<label><span data-i18n="lbl_icon_opacity">Непрозрачность</span><input id="iconOpacity" max="100" min="0" type="range" value="25"/></label>
+<label><span data-i18n="lbl_icon_x">Смещение X</span><input id="iconX" max="800" min="-800" type="range" value="0"/></label>
+<label><span data-i18n="lbl_icon_y">Смещение Y</span><input id="iconY" max="800" min="-800" type="range" value="0"/></label>
+<label>
+<select id="iconBlend">
+<option selected="" value="normal">normal</option>
+<option value="screen">screen</option>
+<option value="overlay">overlay</option>
+<option value="multiply">multiply</option>
+<option value="soft-light">soft-light</option>
+</select>
+</label>
+</div>
+</div>
+<!-- Bottom: plate controls -->
+<div class="group plate">
+<h3 data-i18n="h_plate">Плашка</h3>
+<div class="grid-4">
+<label><span data-i18n="lbl_plate_width">Ширина</span><input id="plateWidth" max="100" min="0" type="range" value="65"/></label>
+<label><span data-i18n="lbl_plate_round">Скругление</span><input id="round" max="100" min="0" type="range" value="60"/></label>
+<label><span data-i18n="lbl_plate_blur">Размытие</span><input id="blur" max="60" min="0" type="range" value="8"/></label>
+<label><span data-i18n="lbl_plate_opacity">Непрозрачность</span><input id="plateOpacity" max="100" min="0" type="range" value="90"/></label>
+</div>
+</div>
+<div class="group">
+<h3 data-i18n="h_presets_export">Пресеты и экспорт</h3>
+<select id="preset">
+<option value="ocean">Ocean Blue</option>
+<option value="forest">Forest Green</option>
+<option value="violet">Violet Night</option>
+<option value="midnight">Midnight</option>
+<option value="sunset">Sunset</option>
+<option value="slate">Slate</option>
+<option value="teal">Teal</option>
+<option value="amber">Amber</option>
+<option value="candy">Candy</option>
+<option value="graphite">Graphite</option>
+</select>
+<div class="btns">
+<button data-i18n="btn_png" id="pngBtn">Скачать PNG</button>
+<button data-i18n="btn_webp" id="webpBtn">Скачать WEBP</button>
+</div>
+<div class="btns">
+<button data-i18n="btn_png2" id="png2Btn">Скачать PNG x2</button>
+<button data-i18n="btn_webp2" id="webp2Btn">Скачать WEBP x2</button>
+</div>
+</div>
+</aside>
+</div>
+</div>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 <script src="script.js"></script>
 </body>
