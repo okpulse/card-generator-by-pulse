@@ -4,9 +4,9 @@
 
 ---
 
-▶️**Користуватись онлайн:** https://okpulse.github.io/card-generator-by-pulse/ 
-
 **Card Generator by Pulse** — це інструмент, який дозволяє швидко та просто створювати картки або банери для сайту, блогу чи Telegram‑каналу (або будь‑куди ще).
+
+▶️**Користуватись онлайн:** https://okpulse.github.io/card-generator-by-pulse/ 
 
 <img src="./assets/interface.png" alt="Interface" width="800" style="max-width:100%;">
 
